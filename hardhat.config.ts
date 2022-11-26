@@ -3,6 +3,7 @@ import "@nomicfoundation/hardhat-toolbox";
 import "@nomiclabs/hardhat-etherscan";
 import "hardhat-deploy";
 import "dotenv/config";
+import "hardhat-gas-reporter";
 
 const key = process.env.PRIVATE_KEY || "";
 
@@ -23,6 +24,9 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY,
+  },
+  gasReporter: {
+    enabled: true,
   },
 };
 

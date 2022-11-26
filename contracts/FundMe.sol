@@ -39,9 +39,10 @@ contract FundMe {
         // want to send ether
     }
 
-    function withdraw() public onlyOwner {
-        for (uint256 i = 0; i < funders.length; i++) {
-            address funder = funders[i];
+    function withdraw() external payable onlyOwner {
+        address[] memory _funders = funders;
+        for (uint256 i = 0; i < _funders.length; i++) {
+            address funder = _funders[i];
             addressToAmount[funder] = 0;
         }
         funders = new address[](0);

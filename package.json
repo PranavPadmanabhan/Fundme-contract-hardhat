@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "yarn hardhat test",
-    "deploy":"yarn hardhat deploy"
+    "test:staging": "yarn hardhat test --network goerli",
+    "deploy":"yarn hardhat deploy",
+    "deploy:goerli":"yarn hardhat deploy --network goerli"
   },
   "author": "",
   "license": "MIT",
